@@ -208,5 +208,5 @@ let enemies = people.filter((name) => {
 
 // Code Here
 let totallyAwesome = people.reduce((acc, curr, arr) => {
-	return 
+	
 },0)
