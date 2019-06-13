@@ -5,7 +5,7 @@
 // Create a new array called 'faveColors' and set it your three favorite colors as strings.
 
 // CODE HERE
-let faveColors = ['blue','black','gray']
+let faveColors = ['blue','black','gray','red']
 
 //////////////////Step 2////////////////////
 // Create an object called 'me' that has these keys: firstname, superHeroName, homeTown, superPowers, superPowerXP, profileImage. 
@@ -29,8 +29,8 @@ let me = {
     superHeroName: 'NumberJuan',
     homeTown: 'Bakersfield',
     superPowers: ['super strength','teleportation','flight'],
-    superPowerXP: Math.floor(Math.random() * 100) + 1,
-    profileImage: `https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg`
+    superPowerXP: function(){return Math.floor(Math.random() * 100) + 1},
+    profileImage: function(){return `https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg`}
 }
 
 //////////////////Step 3////////////////////
@@ -48,15 +48,15 @@ let homeTown = me.homeTown
 
 // CODE HERE
 function setColor(arr){
-    if (arr.length > 3){
-        for(let i = arr.length -1; i >=3; i--){
-            arr.splice(i,1)
-        }
-    }
-
-    for(let j=0; arr.length;j++){
-        if(arr[j] === 'blue'){
-            arr[j] = '#4D4DFF'
+    arr.splice(3,1)
+    // if (arr.length > 3){
+    //     for(let i = arr.length -1; i >=3; i--){
+    //         arr.splice(i,1)
+    //     }
+    // }
+    for(let i=0;i < arr.length;i++){
+        if(arr[i] === 'blue'){
+            arr[i] = '#4D4DFF'
         }
     }
 
@@ -68,7 +68,9 @@ function setColor(arr){
 
 // CODE HERE
 function setPowers(arr){
-    
+    for(let i = 0; i < arr.length; i++){
+        createLi(arr[i])
+    }
 }
 
 
@@ -76,3 +78,9 @@ function setPowers(arr){
 //Lastly, create a function called redactInfo that will take in an obj as a paramter. Let's imagine our super hero needs to go undercover and we need to remove all info about them. That is what this function will do. Loop over the object and change each keys value to 'redacted'. Outside of the loop but still in the redactInfo function, run the function redacted() which is a function we created that will update the text on the screen.
 
 // CODE HERE
+function redactInfo(obj){
+    for(let key in obj){
+        obj[key] = 'redacted'
+    }
+    redacted()
+}
