@@ -183,9 +183,7 @@ const notGeorge = ['Louis', 'Ted', 'Bill', 'Sharon', 'Mark', 'Angela']
 
 // Code Here
 let forTheLoveOfGeorge = notGeorge.map((name) => {
-	if(name != 'George'){
-		forTheLoveOfGeorge.push('George')
-	}
+	return name = 'George'
 })
 
 //////////////////PROBLEM 19////////////////////
@@ -202,12 +200,13 @@ const people = [
 
 // Code Here
 let enemies = people.filter((name) => {
-	if(!people.friend){
-		return people.friend
-	}
+	return !name.friend
 })
 //////////////////PROBLEM 20////////////////////
 
 // Using the people array above, let's get a total of the awesomeLevel from all the people. Call the new array 'totallyAwesome'. Use .reduce()
 
 // Code Here
+let totallyAwesome = people.reduce((acc, curr, arr) => {
+	return 
+},0)
