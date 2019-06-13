@@ -123,6 +123,13 @@ function bigOrSmall(arr){
 // Create a function called 'arrayReverser' that takes in one parameter, arr. Inside of arrayReverser, create an empty array called 'reversed'. Using a for loop, loop over the passed in array in reverse and add each item to the new reversed array. Finally, return the new reversed array
 
 //Code Here
+function arrayReverser(arr){
+	let reversed = []
+	for(let i = arr.length -1;i >= 0; i--){
+		reversed.push(arr[i])
+	}
+	return reversed
+}
 
 //////////////////PROBLEM 14 - 18 Setup////////////////////
 
@@ -135,24 +142,39 @@ const myNumbers = [3, 55, 788, 2, 1]
 // First, let's use .map to create a new array that doubles each number. Call the new array 'doubled'
 
 // Code Here
+let doubled = myNumbers.map((nums) => {
+	return nums * 2
+})
 
 //////////////////PROBLEM 15////////////////////
 
 // Now lets use .filter to only get the nubmer(s) greater than 100. Call the new array 'filtered'
 
 // Code Here
+let filtered = myNumbers.filter((nums) => {
+	if(nums > 100){
+		return nums
+	}
+})
 
 //////////////////PROBLEM 16////////////////////
 
 // Next up, reduce to get the total of the array. call the new array 'total'
 
 // Code Here
+let total = myNumbers.reduce((acc, curr) => {
+	return acc += curr
+},0)
 
 //////////////////PROBLEM 17////////////////////
 
 // Last, lets use .forEach to find the index of each item in the array. First, create an empty array called myNumbersIndex. Next, using forEach, push each items index from the myNumbers array to the myNumbersIndex array
 
 // Code Here
+myNumbersIndex = []
+myNumbers.forEach((nums,i) => {
+	myNumbersIndex.push(i)
+})
 
 //////////////////PROBLEM 18////////////////////
 
@@ -160,6 +182,11 @@ const myNumbers = [3, 55, 788, 2, 1]
 const notGeorge = ['Louis', 'Ted', 'Bill', 'Sharon', 'Mark', 'Angela']
 
 // Code Here
+let forTheLoveOfGeorge = notGeorge.map((name) => {
+	if(name != 'George'){
+		forTheLoveOfGeorge.push('George')
+	}
+})
 
 //////////////////PROBLEM 19////////////////////
 
@@ -174,7 +201,11 @@ const people = [
 ]
 
 // Code Here
-
+let enemies = people.filter((name) => {
+	if(!people.friend){
+		return people.friend
+	}
+})
 //////////////////PROBLEM 20////////////////////
 
 // Using the people array above, let's get a total of the awesomeLevel from all the people. Call the new array 'totallyAwesome'. Use .reduce()
